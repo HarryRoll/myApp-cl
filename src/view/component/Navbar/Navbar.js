@@ -1,5 +1,5 @@
 import { Fragment, useState, useContext } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, Link } from 'react-router-dom'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import authAPI from '../../../API/authAPI'
@@ -84,14 +84,14 @@ export default function Navbar(state) {
                         </div> 
                         : 
                          <div className="flex space-x-4">
-                            <a
-                                href={navigation[0].href} 
+                            <Link
+                                to={navigation[0].href} 
                                 className={classNames('text-gray-300 hover:bg-gray-700 hover:text-white',
                                 'px-3 py-2 rounded-md text-sm font-medium'
                               )}
                             >
                                 {navigation[0].name}
-                            </a>
+                            </Link>
                         </div>
                     }
                 </div>

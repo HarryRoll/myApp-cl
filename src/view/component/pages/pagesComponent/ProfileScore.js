@@ -7,7 +7,7 @@ function ProfileScore() {
         const [score, setScore] = useState()
 
     useEffect(() => {
-        scoreAPI.getScore(auth.id).then(e => setScore(e))
+         scoreAPI.getScore(auth.id).then(e => setScore(e))
     }, [])
   return (
     <div className='rounded w-full shadow-lg bg-white drop-shadow p-4'>

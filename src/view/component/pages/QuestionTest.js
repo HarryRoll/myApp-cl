@@ -11,14 +11,17 @@ function QuestionTest(state) {
 
   useEffect(() => {
       if(!auth){
-          navigate('/')      
+          navigate('/')
+          alert('please login first...!')      
       }
     },[auth])
   return (
     <div  className='p-6'>
+      {auth ? 
         <QuestionTestView
             auth = {auth}
         />
+      :<></>}
     </div>
   )
 }

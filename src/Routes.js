@@ -3,7 +3,7 @@ import { Navigate, useRoutes } from 'react-router-dom'
 import Navbar from './view/component/Navbar/Navbar'
 import Home from './view/component/pages/Home'
 import Users from './view/component/pages/Users'
-import Questions from './view/component/pages/Questions'
+import QuestionsCreate from './view/component/pages/QuestionsCreate'
 import QuestionTest from './view/component/pages/QuestionTest'
 
 export default function Routes(isLogin) {
@@ -20,7 +20,7 @@ export default function Routes(isLogin) {
                   session = {isLogin}
                 />},
                 {path : "users", element : <Users/>},
-                {path : "questions", element : <Questions/>},
+                {path : "questions", element : <QuestionsCreate/>},
                 {path : "test/:id", element : <QuestionTest/>}
             ]
         }
