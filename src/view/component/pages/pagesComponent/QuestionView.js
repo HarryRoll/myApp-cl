@@ -57,7 +57,7 @@ function QuestionView() {
                 <>
                 {userSubject && userSubject.map(e => {
                     return(
-                <Link to={`/test/${e.id}`}>
+                <Link to={`/test/${e.id}`} key={e.id}>
                     <div className='border-2 w-full mb-2 h-48 max-h-48 bg-white drop-shadow-lg rounded-md flex flex-row p-2 hover:bg-blue-100'>
                         <div className='h-full basis-1/5 text-ellipsis overflow-hidden'> 
                             <img src={img} alt='question-logo' className='w full'/>
@@ -78,7 +78,7 @@ function QuestionView() {
                 <>
                 {subject && subject.map(e => {
                     return(
-                <Link onClick={alertLog}>
+                <Link onClick={alertLog} key={e.id}>
                     <div className='border-2 w-full mb-2 h-48 max-h-48 bg-white drop-shadow-lg rounded-md flex flex-row p-2 hover:bg-blue-100'>
                         <div className='h-full basis-1/5 text-ellipsis overflow-hidden'> 
                             <img src={img} alt='question-logo' className='w full'/>

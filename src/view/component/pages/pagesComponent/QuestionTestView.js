@@ -22,9 +22,8 @@ const onChangeValue = (event) => {
     setInputs(values => ({...values, [id_value]: value, id:id, user_id : user_id}))
   }
 const handleSubmit = (event) => {
-    event.preventDefault();
-    // console.log(inputs);
-	scoreAPI.saveScore(inputs).then(e => console.log(e))
+//    event.preventDefault();
+	scoreAPI.saveScore(inputs)
 	navigate('/')
   }
   

@@ -7,7 +7,9 @@ function ProfileScore() {
         const [score, setScore] = useState()
 
     useEffect(() => {
-         scoreAPI.getScore(auth.id).then(e => setScore(e))
+        setTimeout(() => {
+            scoreAPI.getScore(auth.id).then(e => setScore(e))
+        },1200)
     }, [])
   return (
     <div className='rounded w-full shadow-lg bg-white drop-shadow p-4'>
@@ -24,7 +26,7 @@ function ProfileScore() {
                         <td className='w-1/3'>
                             {score && score.map(e => {
                                 return(
-                                    <tr>
+                                    <tr key={e.id}>
                                         <td className='w-5/6'>{e.subject_name} </td>
                                         <td className='w-1/6'>: {e.score}</td>
                                     </tr>                                  

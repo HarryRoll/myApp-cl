@@ -11,7 +11,7 @@ useEffect(() => {
    <div className='p-2 min-w-full bg-white min-h-screen  rounded-lg'> 
       {user && user.map(e => {
         return(
-            <div className='min-w-full border-2 rounded columns-1 shadow-lg bg-white drop-shadow p-3 my-2 flex flex-row'>
+            <div key={e.id} className='min-w-full border-2 rounded columns-1 shadow-lg bg-white drop-shadow p-3 my-2 flex flex-row'>
                 <div className='basis-5/6'>
                     <div>
                         <strong>username : </strong> {e.username}

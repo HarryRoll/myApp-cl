@@ -100,9 +100,9 @@ function QuestCreateComponent(state) {
             </div>
 
             <div>
-                <label for="underline_select" class="sr-only">Underline select</label>
-                <select id="underline_select" class="block py-2.5 px-2 w-full text-sm text-gray-700 bg-transparent border-2 border-gray-300 appearance-none dark:text-gray-700 dark:border-gray-300 rounded-md focus:outline-none focus:ring-0 focus:border-gray-300 peer">
-                    <option selected>Choose a correct answer</option>
+                <label htmlFor="underline_select" className="sr-only">Underline select</label>
+                <select defaultValue={""} id="underline_select" className="block py-2.5 px-2 w-full text-sm text-gray-700 bg-transparent border-2 border-gray-300 appearance-none dark:text-gray-700 dark:border-gray-300 rounded-md focus:outline-none focus:ring-0 focus:border-gray-300 peer">
+                    <option value="">Choose a correct answer</option>
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>

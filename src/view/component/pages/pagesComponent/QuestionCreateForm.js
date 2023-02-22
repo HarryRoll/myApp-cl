@@ -2,7 +2,6 @@ import React,{useState, useEffect} from 'react'
 import QuestCreateComponent from './QuestCreateComponent'
 import DeletedQuestModal from '../../modals/DeleteQuestModal'
 import questApi from '../../../../API/questApi'
-import { Link } from 'react-router-dom'
 
 function QuestionCreateForm() {
     
@@ -98,7 +97,7 @@ function QuestionCreateForm() {
           <>
           {fill && fill.map( q => {
                 return(
-                    <Link>
+                    <div key = {q.id}>
                     <div className='min-w-full border-2 rounded columns-1 shadow-sm bg-white drop-shadow p-3 pb-9 my-2 hover:bg-blue-200'>
                             <div className='w-full grid justify-end opacity-50'>
                                 <svg onClick={()=>{
@@ -109,25 +108,25 @@ function QuestionCreateForm() {
                                 </svg>
                             </div>
                             <h1>{q.question}</h1>
-                    
+
 						{option && option.map(op => {
 							if(op.id_qst === q.id){
                                 if(op.pg === q.correct_answer){
                                     return(
-                                    <div>
-										<input type="radio" id={op.id} value={op.pg} name={"option"+op.id_qst} checked/> {op.answered}
+                                    <div key = {op.id}>
+										<input disabled={true} type="radio" id={op.id} value={op.pg} name={"option"+op.id_qst} checked/> {op.answered}
 									</div>
                                     )
                                 } else {
 								return(
 									<div>
-										<input type="radio" id={op.id} value={op.pg} name={"option"+op.id_qst} /> {op.answered}
+										<input disabled={true} type="radio" id={op.id} value={op.pg} name={"option"+op.id_qst} /> {op.answered}
 									</div>
 								)}
 							}
 						})}
                 </div>
-                </Link>
+                </div>
                 )
             })}
           </>
@@ -135,7 +134,7 @@ function QuestionCreateForm() {
           <>
             {subject && subject.map(e => {
                 return(
-                    <a onClick={() => editSubject(e.id)}>
+                    <a onClick={() => editSubject(e.id)} key = {e.id}>
                         <div className='min-w-full border-2 rounded columns-1 shadow-sm bg-white drop-shadow p-3 my-2 hover:bg-blue-200'>
                             <strong>{e.subject_name}</strong>
                         </div>
